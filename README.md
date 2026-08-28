@@ -2,132 +2,92 @@
 
 ## Project Overview
 
-A graduation project developed at **Cairo University, Faculty of Computers and Artificial Intelligence**.
+An AI-driven predictive maintenance system for aircraft engines based on the NASA C-MAPSS (FD001) dataset.
 
-The project focuses on **predictive maintenance for aircraft engines** using sensor data and machine learning techniques to estimate the **Remaining Useful Life (RUL)** of engine units.
+The project combines **Remaining Useful Life (RUL) prediction** with **maintenance scheduling optimization** to reduce unexpected failures, control maintenance costs, and improve aircraft availability.
 
-The project includes data preprocessing, predictive modeling, and an application for analyzing aircraft engine maintenance data.
+## Objectives
 
-## Project Objectives
+- Predict aircraft engine Remaining Useful Life (RUL).
+- Optimize maintenance schedules.
+- Reduce maintenance costs and unexpected failures.
+- Improve aircraft availability and operational efficiency.
+- Compare XGBoost and CNN approaches for RUL prediction.
 
-The main objectives of the project are to:
+## Methodology
 
-- Process and prepare aircraft engine sensor data for analysis.
-- Estimate the Remaining Useful Life (RUL) of aircraft engines.
-- Apply machine learning techniques for predictive maintenance.
-- Analyze engine degradation patterns using sensor measurements.
-- Support maintenance decisions by predicting potential engine failures before they occur.
+### 1. Data Collection
 
-## Dataset
+NASA C-MAPSS (FD001) was used to collect aircraft engine sensor measurements and RUL data.
 
-The project uses aircraft engine degradation data based on the **NASA C-MAPSS (Commercial Modular Aero-Propulsion System Simulation)** dataset.
+### 2. Data Preprocessing
 
-The dataset contains sensor measurements collected over engine operating cycles and is used to model engine degradation and estimate Remaining Useful Life.
+The sensor data was prepared through:
 
-The processed dataset used in the project is included in:
+- Handling missing values.
+- Removing unnecessary sensors.
+- Clipping outliers.
+- Smoothing sensor signals.
+- Normalizing features.
 
-data/CMAPSS_Dataset.xlsx
-Data Preprocessing
+### 3. Feature Engineering
 
-The preprocessing stage prepares the engine sensor data for predictive modeling.
+Rolling statistics and degradation-based features were created to capture engine health trends over time.
 
-The preprocessing workflow includes preparing and transforming the available engine operating-cycle and sensor measurements into a cleaned dataset suitable for subsequent analysis and modeling.
+### 4. RUL Prediction
 
-The preprocessing implementation is provided in:
+An **XGBoost regression model** was used to estimate the Remaining Useful Life (RUL) of aircraft engines.
 
-GP preprocessing.py
-Predictive Maintenance
+A **CNN approach** was also used for model comparison.
 
-Predictive maintenance aims to estimate the remaining operating time of an aircraft engine before failure.
+### 5. Maintenance Optimization
 
-The project uses historical sensor observations and engine operating cycles to identify degradation behavior and support Remaining Useful Life (RUL) estimation.
+An **Integer Linear Programming (ILP)** model was used to generate optimized maintenance schedules while considering:
 
-The main application implementation is provided in:
+- Safety constraints
+- Capacity constraints
+- Budget constraints
+- Resource constraints
 
-app-123.py
-Project Structure
-aircraft-engine-predictive-maintenance/
-│
-├── app-123.py
-├── GP preprocessing.py
-├── requirements.txt
-├── README.md
-│
-├── data/
-│   └── CMAPSS_Dataset.xlsx
-│
-├── documentation/
-│   └── Documentation.pdf
-│
-└── presentation/
-    └── Graduation presentation final (2).pptx
-Files Description
-app-123.py
+## Technologies
 
-Main Python application used for the project implementation and analysis.
+- Python
+- XGBoost
+- CNN
+- Scikit-learn
+- Pandas
+- NumPy
+- Matplotlib
+- Integer Linear Programming (ILP)
+- HiGHS Solver
 
-GP preprocessing.py
+## My Contributions
 
-Python implementation of the data preprocessing stage used to prepare the aircraft engine dataset.
+My main contribution was the **Data Preprocessing** stage, including:
 
-requirements.txt
+- Cleaning and preparing the NASA C-MAPSS (FD001) dataset.
+- Handling missing values.
+- Removing unnecessary sensors.
+- Clipping outliers.
+- Smoothing sensor signals.
+- Normalizing features.
+- Generating the cleaned dataset for subsequent project stages.
 
-Contains the Python dependencies required to run the project.
+## Project Files
 
-CMAPSS_Dataset.xlsx
+- `app-123.py` — Main application.
+- `GP preprocessing.py` — Data preprocessing implementation.
+- `CMAPSS_Dataset.xlsx` — Cleaned dataset generated during preprocessing.
+- `Documentation.pdf` — Project documentation, methodology, experiments, analysis, and results.
+- `Graduation presentation final.pptx` — Final project presentation.
 
-Cleaned and processed dataset generated from the preprocessing stage.
+## Academic Information
 
-Documentation.pdf
+**Project:** Predictive Maintenance Optimization for Aircraft Engines  
+**Project Type:** Graduation Project  
+**University:** Cairo University  
+**Faculty:** Computers and Artificial Intelligence
 
-Project documentation describing the project methodology, analysis, implementation, and results.
+## Authors
 
-Graduation presentation final (2).pptx
-
-Final graduation project presentation.
-
-Technologies
-Python
-NumPy
-Pandas
-Matplotlib
-Machine Learning
-Predictive Maintenance
-Data Preprocessing
-RUL Estimation
-Project Workflow
-Raw Aircraft Engine Data
-          ↓
-    Data Preprocessing
-          ↓
-    Cleaned Dataset
-          ↓
-   Feature Preparation
-          ↓
- Predictive Maintenance
-          ↓
-      RUL Estimation
-          ↓
- Maintenance Analysis
-Results
-
-The project demonstrates how aircraft engine sensor data can be processed and analyzed to support predictive maintenance and Remaining Useful Life estimation.
-
-The detailed experimental results, analysis, and project findings are available in:
-
-documentation/Documentation.pdf
-Academic Information
-
-Project: Predictive Maintenance Optimization for Aircraft Engines
-Project Type: Graduation Project
-University: Cairo University
-Faculty: Computers and Artificial Intelligence
-
-Authors
-
-Graduation Project Team
-Cairo University
-
-Documentation
-
-For detailed methodology, implementation details, experiments, and results, refer to the project documentation included in the documentation folder.
+Graduation Project Team — Cairo University
